@@ -1,2 +1,2 @@
 # Julia_Introduction
-Repotoget my hands on Julia basics
+Repo to get my hands on Julia basics
