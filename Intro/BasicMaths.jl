@@ -145,7 +145,7 @@ xl = 30.95 / area(17)
 md"Which size of pizza is the best deal?  Write your answer below and assign it to the variable **best_value**."
 
 # ╔═╡ 16ec3f32-d4ff-11ea-20e2-5bc6dd5db083
-best_value = max(small, medium, large, xl)
+best_value = min(small, medium, large, xl)
 
 # ╔═╡ cb419286-d4ff-11ea-1d7f-af5c8574b775
 md"""### 3. Is this a good deal?
@@ -155,19 +155,19 @@ San Marinos has a special **\"Buy two medium pizzas and save \$5\"**.  Is this a
 Calculate the total cost of two medium pizzas deal (saving \$5):"""
 
 # ╔═╡ f147b6cc-d4ff-11ea-05ad-6f5b441e5d1b
-two_medium_cost = 20.95 * 1 - 0
+two_medium_cost = 20.95 * 2
 
 # ╔═╡ 0d76d97c-d500-11ea-2433-e96c6fc43b05
 md"Calculate the total area of two medium pizzas:"
 
 # ╔═╡ 19eb2a82-d500-11ea-3782-596adc689382
-two_medium_area = 1 * area(13)
+two_medium_area = 2 * area(13)
 
 # ╔═╡ 20a1e9cc-d500-11ea-3d9b-279c71bc20f1
 md"Now calculate cost per area by taking the total cost of two medium pizzas and divide by the total area:"
 
 # ╔═╡ 70e85498-d500-11ea-35af-474574f5c011
-two_medium_deal = 1
+two_medium_deal = two_medium_cost / two_medium_area
 
 # ╔═╡ 57f024ae-d500-11ea-1cc4-ed28348fdf93
 md"""Is it a better deal to get two medium pizzas for \$5 off or to just buy an extra-large?"""
@@ -178,19 +178,19 @@ md"""### 4. Advanced Problem
 A new worker at a pizza shop was getting paid for cutting pizza into pieces.  The pieces of pizza could be any size.  Calculate the maximum number of pieces the worker could make with two cuts of the pizza."""
 
 # ╔═╡ 6494e270-d503-11ea-38a7-df96e7f0a241
-cuts2 = 1
+cuts2 = 4
 
 # ╔═╡ 92b4a012-d503-11ea-15a2-1f3a446d3284
 md"Now what about 3 cuts across the pizza?  What is the maximum number of pieces that can be made with **3 cuts**?"
 
 # ╔═╡ a05aae8e-d506-11ea-190f-57e9ce53b8b9
-cuts3 = 1
+cuts3 = 7
 
 # ╔═╡ 2eb9a560-d507-11ea-3b8b-9d06678fe131
 md"Now, how many pieces can be made with **4 cuts**?"
 
 # ╔═╡ 5a8ede88-d507-11ea-30d9-c99a67243781
-cuts4 = 1
+cuts4 = 11
 
 # ╔═╡ d1e3dec0-d507-11ea-1213-d37a9325ee2f
 md"Are you starting to see a pattern?  Can you figure out a formula for how many pieces of pizza can be made with \"n\" cuts?  Make a table and fill in the number of pieces for a number of cuts and see if you can find the pattern:
@@ -200,22 +200,22 @@ Cuts | Pieces
 0    |   1
 1    |   2
 2    |   4
-3    |   
-4    |   
+3    |   7
+4    |   11
 "
 
 # ╔═╡ 97bfd13c-dcc2-11ea-0067-ad8c2c6517fc
 md"To get an extra hint, figure out how many slices we can get from **5 cuts**:"
 
 # ╔═╡ bae0cb62-dcc2-11ea-0667-512e1c407d40
-cuts5 = 1
+cuts5 = 17
 
 # ╔═╡ e0cb2822-dcc2-11ea-2c85-5748bfe526dc
 md"Have you found the pattern? Write down the formula below:"
 
 # ╔═╡ f5f89724-d507-11ea-0a93-6d904f36bbe4
 function pieces(n)
-	return n
+	return sum(0:n) + 1
 end
 
 # ╔═╡ 03249876-d508-11ea-16bb-fd5afed37a1f
