@@ -150,8 +150,14 @@ Now you can work on building an actual solution. Some tips:
 function solve(stacks)::Array{Tuple{Int, Int}}
 	
 	#what to do?
+	res =[]
+	print(length(stacks))
 	
-	return []
+	
+	push!(res, (1,2))
+	push!(res, (1,3))
+	
+	return res
 end
 
 # ╔═╡ 3eb3c4c0-a2c5-11ea-0bcc-c9b52094f660
@@ -179,15 +185,15 @@ function run_solution(solver::Function, start = starting_stacks)
 	return all_states
 end
 
+# ╔═╡ 0b084880-5b22-11eb-1551-7fe3bf4c496e
+run_solution(wrong_solution)
+
 # ╔═╡ 372824b4-a330-11ea-2f26-7b9a1ad018f1
 md"""
 You can use this function to see what your solution does.
 
 If `run_solution` tries to make an impossible move, it will give `missing` from that point onwards. Look at what happens in the `wrong_solution` version and compare it to the moves in `wrong_solution`.
 """
-
-# ╔═╡ d2227b40-a329-11ea-105c-b585d5fcf970
-run_solution(wrong_solution)
 
 # ╔═╡ 9173b174-a327-11ea-3a69-9f7525f2e7b4
 run_solution(solve)
@@ -258,10 +264,10 @@ end
 # ╠═010dbdbc-a2c5-11ea-34c3-837eae17416f
 # ╟─3eb3c4c0-a2c5-11ea-0bcc-c9b52094f660
 # ╠═4709db36-a327-11ea-13a3-bbfb18da84ce
+# ╠═0b084880-5b22-11eb-1551-7fe3bf4c496e
 # ╟─372824b4-a330-11ea-2f26-7b9a1ad018f1
-# ╠═d2227b40-a329-11ea-105c-b585d5fcf970
 # ╠═9173b174-a327-11ea-3a69-9f7525f2e7b4
 # ╟─bb5088ec-a330-11ea-2c41-6b8b92724b3b
-# ╠═10fb1c56-a2c5-11ea-2a06-0d8c36bfa138
+# ╟─10fb1c56-a2c5-11ea-2a06-0d8c36bfa138
 # ╠═8ea7f944-a329-11ea-22cc-4dbd11ec0610
 # ╟─e54add0a-a330-11ea-2eeb-1d42f552ba38
