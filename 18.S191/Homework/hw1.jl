@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.12.20
+# v0.11.13
 
 using Markdown
 using InteractiveUtils
@@ -840,7 +840,7 @@ $$G(x,y)=\frac{1}{2\pi \sigma^2}e^{\frac{-(x^2+y^2)}{2\sigma^2}}$$
 # ╔═╡ aad67fd0-ee15-11ea-00d4-274ec3cda3a3
 function with_gaussian_blur(image)
 
-	return missing
+	return image
 end
 
 # ╔═╡ 8ae59674-ee18-11ea-3815-f50713d0fa08
